@@ -12,7 +12,7 @@ import org.apache.commons.graph.domain.basic.*;
 import org.apache.commons.graph.contract.Contract;
 import org.apache.commons.graph.factory.GraphFactory;
 import org.apache.commons.graph.decorator.DDirectedGraph;
-import org.apache.commons.graph.statemachine.exception.*;
+import org.apache.commons.graph.domain.statemachine.exception.*;
 
 /**
  * StateMachine -
@@ -73,7 +73,6 @@ public class StateMachine
     public void addState(String name)
         throws GraphException
     {
-        State newState = new State(name);
         addState(new State(name));
     }
 
