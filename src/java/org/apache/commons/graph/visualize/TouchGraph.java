@@ -35,7 +35,8 @@ public class TouchGraph
      */
     private String getColorText(Color color)
     {
-        return Integer.toHexString(color.getRGB()).toUpperCase();
+      String RC = Integer.toHexString( color.getRGB()).toUpperCase();
+      return RC.substring( 2, 8 );
     }
 
     /**
@@ -156,8 +157,8 @@ public class TouchGraph
             Vertex v = (Vertex) vertices.next();
 
             pw.println("<NODE nodeID=\"" + v.toString() + "\">");
-            pw.println("<NODE_LOCATION x=\"" + random.nextInt(25) +
-                "\" y = \"" + random.nextInt(25) +
+            pw.println("<NODE_LOCATION x=\"" + random.nextInt(200) +
+                "\" y = \"" + random.nextInt(200) +
                 "\" visible=\"true\" />");
 
             String label;
@@ -170,10 +171,21 @@ public class TouchGraph
                 label = v.toString();
             }
 
+	    String backColor = null;
+	    String textColor = null;
+
+	    if (v instanceof Colored) {
+	      backColor = getColorText(((Colored) v).getBackgroundColor());
+	      textColor = getColorText(((Colored) v).getTextColor() );
+	    } else {
+	      backColor = getVertexColorText();
+	      textColor = getTextColorText();
+	    }
+
             pw.println("<NODE_LABEL label=\"" + label + "\" " +
                 "shape=\"2\" " +
-                "backColor=\"" + getVertexColorText() + "\" " +
-                "textColor=\"" + getTextColorText() + "\" " +
+                "backColor=\"" + backColor + "\" " +
+                "textColor=\"" + textColor + "\" " +
                 "fontSize=\"" + fontSize + "\" />");
 
             pw.println("</NODE>");
@@ -232,3 +244,5 @@ public class TouchGraph
         return;
     }
 }
+
+
