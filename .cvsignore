@@ -4,3 +4,4 @@ test-reports
 velocity.log*
 .classpath
 .project
+maven.log
