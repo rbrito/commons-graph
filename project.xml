@@ -1,16 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <project>
-  <pomVersion>3</pomVersion>
+  <extend>../sandbox-build/project.xml</extend>
   <id>commons-graph</id>
   <name>Graph</name>
   <currentVersion>0.8.2</currentVersion>
-
-  <organization>
-    <name>Apache Software Foundation</name>
-    <url>http://jakarta.apache.org/</url>
-    <logo>/images/jakarta-logo-blue.gif</logo>
-  </organization>
 
   <inceptionYear>2001</inceptionYear>
 
@@ -19,36 +13,6 @@
   <shortDescription>Graph Representation and Manipulation Library</shortDescription>
 
   <description>Jakarta Graph is a toolkit for managing graphs and graph based data structures.</description>
-
-  <url>http://jakarta.apache.org/commons/graph/</url>
-
-  <repository>
-    <connection>scm:cvs:pserver:anoncvs@cvs.apache.org:/home/cvspublic:jakarta-commons-sandbox/graph2</connection>
-    <url>http://cvs.apache.org/viewcvs/jakarta-commons-sandbox/graph2</url>
-  </repository>
-
-  <siteAddress>jakarta.apache.org</siteAddress>
-  <siteDirectory>/www/jakarta.apache.org/commons/graph/</siteDirectory>
-
-  <distributionDirectory>/www/jakarta.apache.org/builds/jakarta-commons-graph/</distributionDirectory>
-
-  <mailingLists>
-
-    <mailingList>
-      <name>Turbine User List</name>
-      <subscribe>turbine-user-subscribe@jakarta.apache.org</subscribe>
-      <unsubscribe>turbine-user-unsubscribe@jakarta.apache.org</unsubscribe>
-      <archive>http://www.mail-archive.com/turbine-user@jakarta.apache.org/</archive>
-    </mailingList>
-
-    <mailingList>
-      <name>Turbine Developer List</name>
-      <subscribe>mailto:turbine-dev-subscribe@jakarta.apache.org</subscribe>
-      <unsubscribe>mailto:turbine-dev-unsubscribe@jakarta.apache.org</unsubscribe>
-      <archive>http://www.mail-archive.com/turbine-dev@jakarta.apache.org/</archive>
-    </mailingList>
-
-  </mailingLists>
 
   <developers>
 
@@ -104,19 +68,4 @@
 
   </dependencies>
 
-  <build>
-    <nagEmailAddress>commons-dev@jakarta.apache.org</nagEmailAddress>
-
-    <sourceDirectory>src/java</sourceDirectory>
-    <unitTestSourceDirectory>src/test</unitTestSourceDirectory>
-
-    <unitTest>
-      <includes>
-        <include>**/*Test.java</include>
-      </includes>
-    </unitTest>
-    
-    <resources/>
-
-  </build>
 </project>
