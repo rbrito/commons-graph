@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<module name="commons-graph">
+  <description>Graph Representation and Manipulation Library</description>
+  <url href="http://jakarta.apache.org/commons/graph/">
+  </url>
+  <cvs module="jakarta-commons-sandbox/graph2" repository="jakarta">
+  </cvs>
+  <project name="commons-graph">
+    <ant buildfile="build.xml" target="dist">
+      <property name="final.name" value="commons-graph-@@DATE@@">
+      </property>
+    </ant>
+    <package>org.apache.commons.graph</package>
+    <depend project="commons-collections">
+    </depend>
+    <depend project="jakarta-ant">
+    </depend>
+    <depend project="jdepend">
+    </depend>
+    <depend project="junit">
+    </depend>
+    <depend project="log4j">
+    </depend>
+    <depend project="nsuml">
+    </depend>
+    <depend project="xml-apis">
+    </depend>
+    <depend project="xml-xerces">
+    </depend>
+    <work nested="target/classes">
+    </work>
+    <home nested="target">
+    </home>
+    <jar name="commons-graph-@@DATE@@.jar">
+    </jar>
+    <javadoc module="jakarta-commons-sandbox" nested="target/docs/apidocs">
+    </javadoc>
+    <nag to="commons-dev@jakarta.apache.org" from="commons-graph development &lt;commons-dev@jakarta.apache.org&gt;">
+    </nag>
+  </project>
+</module>
