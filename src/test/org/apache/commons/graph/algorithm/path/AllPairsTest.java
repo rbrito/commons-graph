@@ -62,9 +62,6 @@ import org.apache.commons.graph.*;
 import org.apache.commons.graph.exception.*;
 
 import java.util.List;
-import java.util.Iterator;
-
-import junit.framework.*;
 
 /**
  * Description of the Class

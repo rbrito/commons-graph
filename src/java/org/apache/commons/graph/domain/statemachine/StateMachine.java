@@ -1,18 +1,15 @@
 package org.apache.commons.graph.domain.statemachine;
 
-import java.util.Map;
-import java.util.Set;
 import java.util.HashMap;
 import java.util.HashSet;
-import java.util.Iterator;
+import java.util.Map;
+import java.util.Set;
 
-import org.apache.commons.graph.*;
-import org.apache.commons.graph.exception.*;
-import org.apache.commons.graph.domain.basic.*;
+import org.apache.commons.graph.MutableDirectedGraph;
 import org.apache.commons.graph.contract.Contract;
-import org.apache.commons.graph.factory.GraphFactory;
 import org.apache.commons.graph.decorator.DDirectedGraph;
-import org.apache.commons.graph.domain.statemachine.exception.*;
+import org.apache.commons.graph.exception.GraphException;
+import org.apache.commons.graph.factory.GraphFactory;
 
 /**
  * StateMachine -

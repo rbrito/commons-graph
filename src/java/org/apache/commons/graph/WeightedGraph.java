@@ -54,8 +54,6 @@ package org.apache.commons.graph;
  * <http://www.apache.org/>.
  */
 
-import java.util.Comparator;
-
 /**
  * Description of the Interface
  */

@@ -58,10 +58,6 @@ package org.apache.commons.graph;
  * DirGraphTest This test will ensure that we can represent a Directed Graph.
  */
 
-import java.util.Set;
-import java.util.HashSet;
-import java.util.Iterator;
-
 /**
  * Description of the Class
  */

@@ -58,8 +58,6 @@ import org.apache.commons.graph.*;
 
 import java.util.BitSet;
 
-import junit.framework.*;
-
 public class DataFlowSolutionsTest extends GraphTest {
     private static BitSet BS_000 = null;
     private static BitSet BS_001 = null;

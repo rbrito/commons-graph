@@ -59,15 +59,15 @@ package org.apache.commons.graph.algorithm.search;
  * minimal cost first, and then go to the later costs.
  */
 
-import java.util.Set;
-import java.util.Map;
 import java.util.HashMap;
-import java.util.HashSet;
 import java.util.Iterator;
+import java.util.Map;
 
-import org.apache.commons.graph.*;
-
-import org.apache.commons.collections.*;
+import org.apache.commons.collections.BinaryHeap;
+import org.apache.commons.collections.PriorityQueue;
+import org.apache.commons.graph.Edge;
+import org.apache.commons.graph.Vertex;
+import org.apache.commons.graph.WeightedGraph;
 
 /**
  * Description of the Class

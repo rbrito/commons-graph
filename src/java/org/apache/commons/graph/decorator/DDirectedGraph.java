@@ -53,17 +53,21 @@ package org.apache.commons.graph.decorator;
  * information on the Apache Software Foundation, please see
  * <http://www.apache.org/>.
  */
-import java.util.Set;
-import java.util.Map;
-import java.util.HashSet;
 import java.util.HashMap;
 import java.util.Iterator;
+import java.util.Map;
+import java.util.Set;
 
-import org.apache.commons.graph.*;
-import org.apache.commons.graph.exception.*;
-import org.apache.commons.graph.domain.basic.*;
-import org.apache.commons.graph.algorithm.path.*;
-import org.apache.commons.graph.algorithm.spanning.*;
+import org.apache.commons.graph.DirectedGraph;
+import org.apache.commons.graph.Edge;
+import org.apache.commons.graph.Vertex;
+import org.apache.commons.graph.WeightedGraph;
+import org.apache.commons.graph.WeightedPath;
+import org.apache.commons.graph.algorithm.path.AllPairsShortestPath;
+import org.apache.commons.graph.algorithm.spanning.MinimumSpanningForest;
+import org.apache.commons.graph.domain.basic.DirectedGraphImpl;
+import org.apache.commons.graph.domain.basic.DirectedGraphWrapper;
+import org.apache.commons.graph.exception.GraphException;
 
 /**
  * Description of the Class

@@ -5,24 +5,29 @@ package org.apache.commons.graph.domain.uml;
  * which can be used for testing.
  */
 
-import java.util.Set;
-import java.util.Map;
-import java.util.HashSet;
 import java.util.HashMap;
 import java.util.Iterator;
+import java.util.Map;
 
-import org.apache.commons.graph.domain.uml.exception.*;
-
+import org.apache.commons.graph.domain.statemachine.State;
+import org.apache.commons.graph.domain.statemachine.StateMachine;
+import org.apache.commons.graph.domain.statemachine.Transition;
+import org.apache.commons.graph.domain.uml.exception.ModelNotFoundException;
+import org.apache.commons.graph.exception.GraphException;
 import org.apache.log4j.Category;
 
-import org.apache.commons.graph.exception.*;
-import org.apache.commons.graph.domain.statemachine.*;
-
-import ru.novosoft.uml.foundation.data_types.*;
+import ru.novosoft.uml.behavior.state_machines.MCompositeState;
+import ru.novosoft.uml.behavior.state_machines.MEvent;
+import ru.novosoft.uml.behavior.state_machines.MFinalState;
+import ru.novosoft.uml.behavior.state_machines.MGuard;
+import ru.novosoft.uml.behavior.state_machines.MPseudostate;
+import ru.novosoft.uml.behavior.state_machines.MState;
+import ru.novosoft.uml.behavior.state_machines.MStateMachine;
+import ru.novosoft.uml.behavior.state_machines.MStateVertex;
+import ru.novosoft.uml.behavior.state_machines.MTransition;
+import ru.novosoft.uml.foundation.core.MClass;
+import ru.novosoft.uml.foundation.data_types.MPseudostateKind;
 import ru.novosoft.uml.model_management.MModel;
-import ru.novosoft.uml.foundation.core.*;
-import ru.novosoft.uml.behavior.state_machines.*;
-import ru.novosoft.uml.behavior.common_behavior.*;
 
 /**
  * Description of the Class

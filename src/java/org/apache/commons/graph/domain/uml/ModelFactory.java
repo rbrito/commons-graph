@@ -1,23 +1,19 @@
 package org.apache.commons.graph.domain.uml;
 
 import java.io.File;
-import java.io.IOException;
-import java.io.InputStream;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
-
+import java.io.IOException;
+import java.io.InputStream;
 import java.util.Enumeration;
-
-import java.util.zip.*;
-
-import org.xml.sax.InputSource;
-
-import org.apache.commons.graph.domain.uml.exception.*;
+import java.util.zip.ZipEntry;
+import java.util.zip.ZipFile;
 
 import org.apache.log4j.Category;
+import org.xml.sax.InputSource;
 
-import ru.novosoft.uml.xmi.XMIReader;
 import ru.novosoft.uml.model_management.MModel;
+import ru.novosoft.uml.xmi.XMIReader;
 
 /**
  * Description of the Class

@@ -1,4 +1,4 @@
-package org.apache.commons.graph.dependency.exception;
+package org.apache.commons.graph.domain.dependency.exception;
 
 import org.apache.commons.graph.exception.*;
 

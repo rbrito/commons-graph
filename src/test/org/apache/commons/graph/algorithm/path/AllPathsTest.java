@@ -59,16 +59,12 @@ package org.apache.commons.graph.algorithm.path;
  */
 
 import org.apache.commons.graph.*;
-import org.apache.commons.graph.exception.*;
 
 import java.util.Set;
-import java.util.List;
 import java.util.Random;
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.AbstractSet;
-
-import junit.framework.*;
 
 /**
  * Description of the Class

@@ -3,19 +3,15 @@ package org.apache.commons.graph.domain.dependency;
 import org.apache.commons.graph.*;
 import org.apache.commons.graph.contract.*;
 import org.apache.commons.graph.exception.*;
-import org.apache.commons.graph.domain.basic.*;
 import org.apache.commons.graph.factory.GraphFactory;
 import org.apache.commons.graph.decorator.DDirectedGraph;
-import org.apache.commons.graph.dependency.exception.*;
+import org.apache.commons.graph.domain.dependency.exception.CircularDependencyException;
 
-import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashMap;
-import java.util.HashSet;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
-import java.util.Set;
 
 /**
  * Description of the Class

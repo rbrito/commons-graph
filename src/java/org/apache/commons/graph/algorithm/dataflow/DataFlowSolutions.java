@@ -6,9 +6,6 @@ import java.util.HashMap;
 import java.util.Iterator;
 
 import org.apache.commons.graph.*;
-import org.apache.commons.graph.exception.*;
-import org.apache.commons.graph.domain.basic.*;
-
 
 public class DataFlowSolutions
 {

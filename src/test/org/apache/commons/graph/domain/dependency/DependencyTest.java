@@ -5,7 +5,7 @@ import java.util.List;
 import java.util.HashSet;
 
 import org.apache.commons.graph.*;
-import org.apache.commons.graph.dependency.exception.*;
+import org.apache.commons.graph.domain.dependency.exception.*;
 
 /**
  * Description of the Class
