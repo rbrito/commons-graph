@@ -60,8 +60,10 @@ import java.util.HashMap;
 import java.util.Iterator;
 
 import org.apache.commons.graph.*;
-import org.apache.commons.graph.impl.*;
 import org.apache.commons.graph.exception.*;
+import org.apache.commons.graph.domain.basic.*;
+import org.apache.commons.graph.algorithm.path.*;
+import org.apache.commons.graph.algorithm.spanning.*;
 
 /**
  * Description of the Class
@@ -74,14 +76,18 @@ public class DDirectedGraph
     private WeightedGraph weighted;
     private Map weights = new HashMap();// EDGE X DOUBLE
     private static Map decoratedGraphs = new HashMap();// DGRAPH X DDGRAPH
-    private AllPaths allPaths = null;
+    private AllPairsShortestPath allPaths = null;
+
+  protected DDirectedGraph() {
+    super();
+  }
 
     /**
      * Constructor for the DDirectedGraph object
      *
      * @param impl
      */
-    private DDirectedGraph(DirectedGraph impl)
+    protected DDirectedGraph(DirectedGraph impl)
     {
         super(impl);
 
@@ -203,7 +209,7 @@ public class DDirectedGraph
         {
             if (allPaths == null)
             {
-                allPaths = new AllPaths(this);
+                allPaths = new AllPairsShortestPath(this);
             }
             else
             {
@@ -221,4 +227,16 @@ public class DDirectedGraph
         return true;
     }
 
+  public MinimumSpanningForest minimumSpanningForest() {
+    return new MinimumSpanningForest( this );
+  }
+
+  public MinimumSpanningForest maximumSpanningForest() {
+    return new MinimumSpanningForest( false, this );
+  }
+
 }
+
+
+
+
