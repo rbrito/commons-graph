@@ -4,7 +4,7 @@
   <pomVersion>3</pomVersion>
   <id>commons-graph</id>
   <name>Graph</name>
-  <currentVersion>0.8.1</currentVersion>
+  <currentVersion>0.8.2</currentVersion>
 
   <organization>
     <name>Apache Software Foundation</name>
