@@ -94,7 +94,8 @@ public class DFS
      */
     public String getColor(Vertex v)
     {
-        return (String) colors.get(v);
+        String color = (String)colors.get(v);
+        return color != null ? color : WHITE;
     }
 
 
@@ -109,7 +110,7 @@ public class DFS
 
         Vertex v = graph.getTarget(e);
 
-        if (colors.get(v) == WHITE)
+        if (getColor(v) == WHITE)
         {
             visitVertex(graph, v, visitor);
         }
@@ -124,7 +125,6 @@ public class DFS
                              Vertex v,
                              Visitor visitor)
     {
-        colors.remove(v);
         colors.put(v, GRAY);
 
         visitor.discoverVertex(v);
@@ -138,7 +138,6 @@ public class DFS
 
         visitor.finishVertex(v);
 
-        colors.remove(v);
         colors.put(v, BLACK);
     }
 
@@ -149,12 +148,7 @@ public class DFS
                       Vertex root,
                       Visitor visitor)
     {
-        Iterator vertices = graph.getVertices().iterator();
-        while (vertices.hasNext())
-        {
-            colors.put(vertices.next(), WHITE);
-        }
-
+        colors.clear();
         visitor.discoverGraph(graph);
 
         visitVertex(graph, root, visitor);
@@ -166,14 +160,10 @@ public class DFS
      * visit - Visits all nodes in the graph.
      */
     public void visit( DirectedGraph graph, Visitor visitor ) {
-	Iterator vertices = graph.getVertices().iterator();
-	while (vertices.hasNext()) {
-	    colors.put( vertices.next(), WHITE );
-	}
-
+    colors.clear();
 	visitor.discoverGraph( graph );
 	
-	vertices = graph.getVertices().iterator();
+	Iterator vertices = graph.getVertices().iterator();
 	while (vertices.hasNext()) {
 	    Vertex v = (Vertex) vertices.next();
 
