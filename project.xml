@@ -2,7 +2,7 @@
 
 <project>
   <name>jakarta-commons-graph2</name>
-  <id>graph</id>
+  <id>commons-graph</id>
   <currentVersion>0.8</currentVersion>
   <organization>Apache Software Foundation</organization>
   <inceptionYear>2001</inceptionYear>
