@@ -6,9 +6,9 @@ package org.apache.commons.graph.contract;
  */
 
 import org.apache.commons.graph.*;
-import org.apache.commons.graph.impl.*;
 import org.apache.commons.graph.contract.*;
 import org.apache.commons.graph.exception.*;
+import org.apache.commons.graph.factory.*;
 
 /**
  * Description of the Class

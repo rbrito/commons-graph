@@ -72,7 +72,7 @@ import java.util.Iterator;
 
 import junit.framework.*;
 
-import org.apache.commons.graph.impl.*;
+import org.apache.commons.graph.domain.basic.*;
 import org.apache.commons.graph.exception.*;
 
 /**
@@ -218,6 +218,9 @@ public class GraphTest extends TestCase
      * Description of the Field
      */
     public EdgeImpl V1_V2__ = new EdgeImpl(V1, V2);// For Parallel #2
+
+  public EdgeImpl V1_V2_V3 = new EdgeImpl(V1, V2); // HyperEdge. . .
+  
     /**
      * Description of the Field
      */
@@ -512,6 +515,27 @@ public class GraphTest extends TestCase
     }
 
     /**
+     * v1 / ^ v \ v2 ---> v3
+     */
+    public DirectedGraph makeDirected4Cycle()
+        throws GraphException
+    {
+        DirectedGraphImpl RC = new DirectedGraphImpl();
+
+        RC.addVertex(V1);
+        RC.addVertex(V2);
+        RC.addVertex(V3);
+	RC.addVertex(V4);
+
+        RC.addEdge(V1_V2, V1, V2);
+        RC.addEdge(V2_V3, V2, V3);
+        RC.addEdge(V3_V4, V3, V4);
+	RC.addEdge(V4_V1, V4, V1);
+
+        return RC;
+    }
+
+    /**
      * v1--v2--v3 Three Vertices, Two Edges (No Cycle)
      */
     public UndirectedGraph makeNoCycle()
@@ -674,6 +698,56 @@ public class GraphTest extends TestCase
         return RC;
     }
 
+  /**
+   * makeHyperEdgeGraph
+   *
+   * This makes a graph which has more than one Vertex on an Edge.
+   *
+   *                   V1
+   *                   |
+   *                   *
+   *                  / \
+   *                V2   V3
+   *
+   */
+  public Graph makeHyperGraph() {
+    UndirectedGraphImpl RC = new UndirectedGraphImpl();
+    
+    RC.addVertex( V1 );
+    RC.addVertex( V2 );
+    RC.addVertex( V3 );
+
+    RC.addEdge( V1_V2_V3 );
+    RC.connect( V1_V2_V3, V1 );
+    RC.connect( V1_V2_V3, V2 );
+    RC.connect( V1_V2_V3, V3 );
+
+    return RC;
+  }
+
+
+    /**
+     *   
+     *   V1 --> V2 --> V3 <--> V4
+     */
+    public DirectedGraph makeCycleNoReturn()
+        throws GraphException
+    {
+        DirectedGraphImpl RC = new DirectedGraphImpl();
+
+        RC.addVertex(V1);
+        RC.addVertex(V2);
+        RC.addVertex(V3);
+        RC.addVertex(V4);
+
+        RC.addEdge(V1_V2, V1, V2);
+        RC.addEdge(V2_V3, V2, V3);
+        RC.addEdge(V3_V4, V3, V4);
+        RC.addEdge(V4_V3, V4, V3);
+
+        return RC;
+    }
+
     /**
      * A unit test for JUnit
      */
@@ -757,10 +831,11 @@ public class GraphTest extends TestCase
         return new HashSet();
     }
 
-    /**
+
+  /**
      * Description of the Method
      */
-    public Set makeSet(Vertex v)
+    public Set makeSet(Object v)
     {
         Set RC = new HashSet();
         RC.add(v);
@@ -770,8 +845,8 @@ public class GraphTest extends TestCase
     /**
      * Description of the Method
      */
-    public Set makeSet(Vertex v1,
-                       Vertex v2)
+    public Set makeSet(Object v1,
+                       Object v2)
     {
         Set RC = makeSet(v1);
         RC.add(v2);
@@ -793,9 +868,9 @@ public class GraphTest extends TestCase
     /**
      * Description of the Method
      */
-    public Set makeSet(Vertex v1,
-                       Vertex v2,
-                       Vertex v3)
+    public Set makeSet(Object v1,
+                       Object v2,
+                       Object v3)
     {
         return makeSet(makeSet(v1, v2),
             makeSet(v3));
@@ -804,15 +879,14 @@ public class GraphTest extends TestCase
     /**
      * Description of the Method
      */
-    public Set makeSet(Vertex v1,
-                       Vertex v2,
-                       Vertex v3,
-                       Vertex v4)
+    public Set makeSet(Object v1,
+                       Object v2,
+                       Object v3,
+                       Object v4)
     {
         return makeSet(makeSet(v1, v2),
             makeSet(v3, v4));
     }
-
 
     /**
      * Description of the Method

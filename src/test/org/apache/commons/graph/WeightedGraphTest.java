@@ -59,7 +59,7 @@ package org.apache.commons.graph;
  * are possible.
  */
 
-import org.apache.commons.graph.impl.*;
+import org.apache.commons.graph.domain.basic.*;
 import org.apache.commons.graph.exception.*;
 
 /**
@@ -410,7 +410,7 @@ public class WeightedGraphTest
         RC.setWeight(V2_V4, 1.5);
 
         RC.setWeight(V1_V3, 2.5);
-        RC.setWeight(V3_V4, 2.5);
+        RC.setWeight(V3_V4, 3.5);
 
         return RC;
     }
@@ -434,7 +434,7 @@ public class WeightedGraphTest
             IUT.getWeight(V1_V3), 2.5, 0.0001);
 
         assertEquals("Wrong Weight on V3->V4",
-            IUT.getWeight(V3_V4), 2.5, 0.0001);
+            IUT.getWeight(V3_V4), 3.5, 0.0001);
     }
 
 
@@ -448,7 +448,7 @@ public class WeightedGraphTest
         DirectedGraphImpl RC =
             (DirectedGraphImpl) makeDiamond();
 
-        RC.setWeight(V1_V2, 2.5);
+        RC.setWeight(V1_V2, 3.5);
         RC.setWeight(V2_V4, 2.5);
 
         RC.setWeight(V1_V3, 1.5);
@@ -467,7 +467,7 @@ public class WeightedGraphTest
         verifyGraph(IUT, 4, 4);
 
         assertEquals("Wrong Weight on V1->V2",
-            IUT.getWeight(V1_V2), 2.5, 0.0001);
+            IUT.getWeight(V1_V2), 3.5, 0.0001);
 
         assertEquals("Wrong Weight on V2->V4",
             IUT.getWeight(V2_V4), 2.5, 0.0001);
@@ -565,3 +565,9 @@ public class WeightedGraphTest
     }
 
 }
+
+
+
+
+
+
