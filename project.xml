@@ -82,9 +82,8 @@
      </aspectSourceDirectories>
 
      <unitTestClassEntries>
-       <unitTestClassEntry>
-         exclude = **/*.class
-       </unitTestClassEntry>
+       <unitTestClassEntry>include = **/*Test*.class</unitTestClassEntry>
+       <unitTestClassEntry>exclude = **/*$*.class</unitTestClassEntry>
      </unitTestClassEntries>
 
      <runtimeTestClassEntries>

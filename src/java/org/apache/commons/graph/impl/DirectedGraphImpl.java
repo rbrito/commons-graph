@@ -452,16 +452,13 @@ public class DirectedGraphImpl
                          Object args[])
         throws Throwable
     {
-        try
+        try 
         {
             return method.invoke(this, args);
-        }
-        catch (InvocationTargetException ex)
+        } 
+        catch (InvocationTargetException ex) 
         {
-            //!! David can fix this, this needs to run on 1.3
-            return null;
-            //throw ex.getCause();
+            throw ex.getTargetException();
         }
     }
-
 }
