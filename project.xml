@@ -23,7 +23,7 @@
   <url>http://jakarta.apache.org/commons/graph/</url>
 
   <repository>
-    <connection>scm:cvs:anoncvs@cvs.apache.org:/home/cvspublic:jakarta-commons-sandbox/graph2</connection>
+    <connection>scm:cvs:pserver:anoncvs@cvs.apache.org:/home/cvspublic:jakarta-commons-sandbox/graph2</connection>
     <url>http://cvs.apache.org/viewcvs/jakarta-commons-sandbox/graph2</url>
   </repository>
 
