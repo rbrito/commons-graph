@@ -2,9 +2,9 @@
 
 <project>
   <pomVersion>3</pomVersion>
-  <name>commons-graph</name>
-  <id>Graph</id>
-  <currentVersion>0.8</currentVersion>
+  <id>commons-graph</id>
+  <name>Graph</name>
+  <currentVersion>0.8.1</currentVersion>
 
   <organization>
     <name>Apache Software Foundation</name>
@@ -23,7 +23,7 @@
   <url>http://jakarta.apache.org/commons/graph/</url>
 
   <repository>
-    <connection>scm:cvs:anoncvs@cvs.apache.org:/home/cvspublic:jakarta-commons/graph2</connection>
+    <connection>scm:cvs:anoncvs@cvs.apache.org:/home/cvspublic:jakarta-commons-sandbox/graph2</connection>
     <url>http://cvs.apache.org/viewcvs/jakarta-commons-sandbox/graph2</url>
   </repository>
 
@@ -110,7 +110,7 @@
 
     <unitTest>
       <includes>
-        <include>**/*Test.class</include>
+        <include>**/*Test.java</include>
       </includes>
     </unitTest>
     

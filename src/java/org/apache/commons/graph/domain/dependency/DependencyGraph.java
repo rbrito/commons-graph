@@ -8,11 +8,14 @@ import org.apache.commons.graph.factory.GraphFactory;
 import org.apache.commons.graph.decorator.DDirectedGraph;
 import org.apache.commons.graph.dependency.exception.*;
 
-import java.util.Map;
-import java.util.List;
-import java.util.HashMap;
-import java.util.Iterator;
+import java.util.ArrayList;
 import java.util.Collection;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
 
 /**
  * Description of the Class
@@ -49,7 +52,7 @@ public class DependencyGraph
     private void init()
     {
     }
-
+    
     /**
      * Adds a feature to the Dependencies attribute of the DependencyGraph
      * object
@@ -114,6 +117,98 @@ public class DependencyGraph
     {
         return visitor.getSortedDependencies(this, findVertex(head));
     }
+
+    /** Retrieve the vertices in a flattened, sorted, valid order.
+     *
+     *  @return The list of vertices in a valid order.
+     */
+    public List getSortedVertices()
+    {
+        Set  vertices   = new HashSet( getVertices() );
+        List sortedDeps = new ArrayList( vertices.size() );
+
+        Vertex vertex = null;
+        List   deps   = null;
+
+        DependencyVisitor visitor = new DependencyVisitor();
+        
+        // While we still have unaccounted-for vertices
+
+        while ( ! vertices.isEmpty() )
+        {
+            // System.err.println( "--------------------------" );
+
+            // System.err.println( "## vertices = " + dumpVertices( vertices ) );
+            // pick a vertex
+            vertex = (Vertex) vertices.iterator().next();
+            
+            // System.err.println( "## vertex = " + ((Project)((DependencyVertex)vertex).getValue()).getId() );
+
+            // finds its sorted dependencies (including itself)
+            deps = visitor.getSortedDependencies( this, vertex );
+
+            // System.err.println( "## deps = " + dumpVertices( deps ) );
+
+            DependencyVertex eachVertex = null;
+
+            // for each dependency...
+            for (Iterator i = deps.iterator(); i.hasNext();)
+            {
+                eachVertex = findVertex( i.next() );
+                
+                // if we haven't accounted for the dependency
+                if ( vertices.contains( eachVertex ) )
+                {
+                    // account for it.
+                    vertices.remove( eachVertex );
+
+                    // tag it to the tail end of the sorted list.
+                    sortedDeps.add( eachVertex.getValue() );
+                }
+            }
+        }
+
+        return sortedDeps;
+    }
+    
+    /*
+    protected String dumpVertices(Collection vertices)
+    {
+        StringBuffer buf = new StringBuffer();
+
+        buf.append( "{" );
+
+        Iterator vertIter = vertices.iterator();
+
+        Object eachVertex = null;
+        DependencyVertex vertex = null;
+
+        while ( vertIter.hasNext() )
+        {
+            eachVertex = (Object) vertIter.next();
+
+            if ( eachVertex instanceof DependencyVertex)
+            {
+                vertex = (DependencyVertex) eachVertex;
+            }
+            else
+            {
+                vertex = findVertex( eachVertex );
+            }
+
+            buf.append( ((Project)vertex.getValue()).getId() );
+
+            if ( vertIter.hasNext() )
+            {
+                buf.append( ", " );
+            }
+        }
+
+        buf.append( "}" );
+
+        return buf.toString();
+    }
+    */
 }
 
 
