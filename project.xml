@@ -2,11 +2,8 @@
 
 <project>
   <pomVersion>3</pomVersion>
-
-  <name>jakarta-commons-graph2</name>
-
-  <id>commons-graph</id>
-
+  <name>commons-graph</name>
+  <id>Graph</id>
   <currentVersion>0.8</currentVersion>
 
   <organization>
@@ -99,30 +96,25 @@
       <url>http://xml.apache.org/xerces/</url>
     </dependency>
 
+    <dependency>
+      <id>junit</id>
+      <version>3.7</version>
+    </dependency>
+
   </dependencies>
 
   <build>
 
     <sourceDirectory>src/java</sourceDirectory>
-
     <unitTestSourceDirectory>src/test</unitTestSourceDirectory>
 
-    <aspectSourceDirectories/>
+    <unitTest>
+      <includes>
+        <include>**/*Test.class</include>
+      </includes>
+    </unitTest>
+    
+    <resources/>
 
-    <!-- Unit test classes -->
-
-    <unitTestClassEntries>
-      <unitTestClassEntry>**/*Test.class</unitTestClassEntry>
-    </unitTestClassEntries>
-
-    <!-- Runtime unit test classes -->
-
-    <runtimeTestClassEntries/>
-
-    <!-- J A R  R E S O U R C E S -->
-    <!-- Resources that are packaged up inside the JAR file -->
-
-    <jarResources/>
-    <jars/>
   </build>
 </project>
