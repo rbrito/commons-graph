@@ -84,4 +84,10 @@ public interface Path
      */
     public List getEdges();
 
+    /**
+     * size() - This returns the size of the path in terms of number of
+     * verticies it visits.
+     */
+    public int size();
+
 }
