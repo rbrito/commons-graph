@@ -72,5 +72,13 @@ public class DependencyVisitor
         dfs.visit(dg, root, this);
         return deps;
     }
+
+    public synchronized List
+	getSortedDependencies(DependencyGraph dg )
+    {
+	deps = new LinkedList();
+	dfs.visit( dg, this );
+	return deps;
+    }
 }
 

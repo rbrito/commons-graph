@@ -164,5 +164,27 @@ public class DFS
         visitor.finishGraph(graph);
     }
 
+    /**
+     * visit - Visits all nodes in the graph.
+     */
+    public void visit( DirectedGraph graph, Visitor visitor ) {
+	Iterator vertices = graph.getVertices().iterator();
+	while (vertices.hasNext()) {
+	    colors.put( vertices.next(), WHITE );
+	}
+
+	visitor.discoverGraph( graph );
+	
+	vertices = graph.getVertices().iterator();
+	while (vertices.hasNext()) {
+	    Vertex v = (Vertex) vertices.next();
+
+	    if (colors.get( v ) == WHITE) {
+		visitVertex( graph, v, visitor );
+	    }
+	}
+
+	visitor.finishGraph( graph );
+    }
 }
 

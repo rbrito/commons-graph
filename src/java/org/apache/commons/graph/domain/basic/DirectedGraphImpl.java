@@ -72,10 +72,12 @@ import org.apache.commons.graph.exception.*;
  */
 public class DirectedGraphImpl
      implements DirectedGraph,
-    WeightedGraph,
-    MutableDirectedGraph,
-    InvocationHandler
+		WeightedGraph,
+		MutableDirectedGraph,
+		InvocationHandler
 {
+    private Vertex root = null;
+
     private Set vertices = new HashSet();
     private Set edges = new HashSet();
     private List contracts = new ArrayList();
@@ -264,6 +266,8 @@ public class DirectedGraphImpl
     private void addVertexI(Vertex v)
         throws GraphException
     {
+	if (root == null) root = v;
+
         vertices.add(v);
     }
 

@@ -89,12 +89,13 @@
       <id>commons-collections</id>
       <version>1.0</version>
     </dependency>
-
+<!--
     <dependency>
       <id>xerces</id>
       <version>1.2.3</version>
       <url>http://xml.apache.org/xerces/</url>
     </dependency>
+-->
 
     <dependency>
       <id>junit</id>
