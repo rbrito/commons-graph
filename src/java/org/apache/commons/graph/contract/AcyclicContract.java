@@ -56,7 +56,7 @@ package org.apache.commons.graph.contract;
 import java.util.Iterator;
 
 import org.apache.commons.graph.*;
-import org.apache.commons.graph.search.*;
+import org.apache.commons.graph.algorithm.search.*;
 import org.apache.commons.graph.exception.*;
 import org.apache.commons.graph.decorator.*;
 
