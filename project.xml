@@ -1,40 +1,67 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <project>
+  <pomVersion>3</pomVersion>
+
   <name>jakarta-commons-graph2</name>
+
   <id>commons-graph</id>
+
   <currentVersion>0.8</currentVersion>
-  <organization>Apache Software Foundation</organization>
+
+  <organization>
+    <name>Apache Software Foundation</name>
+    <url>http://jakarta.apache.org/</url>
+    <logo>/images/jakarta-logo-blue.gif</logo>
+  </organization>
+
   <inceptionYear>2001</inceptionYear>
+
   <package>org.apache.commons.graph</package>
+
   <shortDescription>Graph Representation and Manipulation Library</shortDescription>
+
   <description>Jakarta Graph is a toolkit for managing graphs and graph based data structures.</description>
+
   <url>http://jakarta.apache.org/commons/graph/</url>
-  <cvsWebUrl>http://cvs.apache.org/viewcvs/jakarta-commons-sandbox/graph2</cvsWebUrl>
+
+  <repository>
+    <connection>scm:cvs:anoncvs@cvs.apache.org:/home/cvspublic:jakarta-commons/graph2</connection>
+    <url>http://cvs.apache.org/viewcvs/jakarta-commons-sandbox/graph2</url>
+  </repository>
+
   <siteAddress>jakarta.apache.org</siteAddress>
   <siteDirectory>/www/jakarta.apache.org/commons/graph/</siteDirectory>
+
   <distributionDirectory>/www/jakarta.apache.org/builds/jakarta-commons-graph/</distributionDirectory>
+
   <mailingLists>
+
     <mailingList>
       <name>Turbine User List</name>
       <subscribe>turbine-user-subscribe@jakarta.apache.org</subscribe>
       <unsubscribe>turbine-user-unsubscribe@jakarta.apache.org</unsubscribe>
       <archive>http://www.mail-archive.com/turbine-user@jakarta.apache.org/</archive>
     </mailingList>
+
     <mailingList>
       <name>Turbine Developer List</name>
       <subscribe>mailto:turbine-dev-subscribe@jakarta.apache.org</subscribe>
       <unsubscribe>mailto:turbine-dev-unsubscribe@jakarta.apache.org</unsubscribe>
       <archive>http://www.mail-archive.com/turbine-dev@jakarta.apache.org/</archive>
     </mailingList>
+
   </mailingLists>
+
   <developers>
+
     <developer>
       <name>David Dixon-Peugh</name>
       <id>dpeugh</id>
       <email>dpeugh@mindspring.com</email>
       <organization>UltraLog At DARPA</organization>
     </developer>
+
     <developer>
       <name>Jason van Zyl</name>
       <id>jvanzyl</id>
@@ -42,37 +69,56 @@
       <organization>Zenplex</organization>
     </developer>
   </developers>
+
   <dependencies>
+
     <dependency>
-      <name>log4j</name>
+      <id>log4j</id>
       <version>1.1.3</version>
     </dependency>
+
     <dependency>
-      <name>nsuml</name>
+      <id>jdepend</id>
+      <version>2.2</version>
+      <url>http://www.clarkware.com/software/JDepend.html</url>
+    </dependency>
+
+    <dependency>
+      <id>nsuml</id>
       <version>0.4.20</version>
     </dependency>
+
     <dependency>
-      <name>commons-collections</name>
+      <id>commons-collections</id>
       <version>1.0</version>
     </dependency>
+
+    <dependency>
+      <id>xerces</id>
+      <version>1.2.3</version>
+      <url>http://xml.apache.org/xerces/</url>
+    </dependency>
+
   </dependencies>
+
   <build>
-    <sourceDirectories>
-      <sourceDirectory>src/java</sourceDirectory>
-    </sourceDirectories>
-    <testSourceDirectories>
-      <testSourceDirectory>src/java</testSourceDirectory>
-      <testSourceDirectory>src/test</testSourceDirectory>
-    </testSourceDirectories>
+
+    <sourceDirectory>src/java</sourceDirectory>
+
+    <unitTestSourceDirectory>src/test</unitTestSourceDirectory>
+
     <aspectSourceDirectories/>
+
     <!-- Unit test classes -->
 
     <unitTestClassEntries>
-      <unitTestClassEntry>include = **/*Test.class</unitTestClassEntry>
+      <unitTestClassEntry>**/*Test.class</unitTestClassEntry>
     </unitTestClassEntries>
+
     <!-- Runtime unit test classes -->
 
     <runtimeTestClassEntries/>
+
     <!-- J A R  R E S O U R C E S -->
     <!-- Resources that are packaged up inside the JAR file -->
 
