@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <project>
-  <extend>../sandbox-build/project.xml</extend>
+  <extend>../commons-build/sandbox-project.xml</extend>
   <id>commons-graph</id>
   <name>Graph</name>
   <currentVersion>0.8.2</currentVersion>
